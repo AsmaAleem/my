@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    #container {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      width: 300px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>JavaScript Pop-Up Demo</h1>
+    <button onclick="displayDate()">Display Date</button>
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+    <button onclick="generateMultiplicationTable()">Generate Multiplication Table</button>
+    <button onclick="calculateSumOfNumbers()">Calculate Sum of Numbers</button>
+    <input type="text" id="output" readonly>
+  </div>
+
+  <script>
+    function displayDate() {
+      var currentDate = new Date().toLocaleDateString();
+      document.getElementById("output").value = currentDate;
+    }
+
+    function calculateFactorial() {
+      var number = parseInt(prompt("Enter a number:"));
+      if (!isNaN(number)) {
+        var factorial = 1;
+        for (var i = 1; i <= number; i++) {
+          factorial *= i;
+        }
+        alert("Factorial of " + number + " is " + factorial);
+      } else {
+        alert("Invalid input. Please enter a valid number.");
+      }
+    }
+
+    function generateMultiplicationTable() {
+      var number = parseInt(prompt("Enter a number:"));
+      if (!isNaN(number)) {
+        var table = "";
+        for (var i = 1; i <= 10; i++) {
+          table += number + " x " + i + " = " + (number * i) + "\n";
+        }
+        alert("Multiplication Table for " + number + ":\n\n" + table);
+      } else {
+        alert("Invalid input. Please enter a valid number.");
+      }
+    }
+
+    function calculateSumOfNumbers() {
+      var number1 = parseInt(prompt("Enter a number:"));
+      if (!isNaN(number1)) {
+        var number2 = parseInt(prompt("Enter another number:"));
+        if (!isNaN(number2)) {
+          var sum = number1 + number2;
+          alert("Sum of " + number1 + " and " + number2 + " is " + sum);
+        } else {
+          alert("Invalid input for the second number. Please enter a valid number.");
+        }
+      } else {
+        alert("Invalid input for the first number. Please enter a valid number.");
+      }
+    }
+  </script>
+</body>
+</html>
